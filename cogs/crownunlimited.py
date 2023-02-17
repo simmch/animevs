@@ -169,17 +169,16 @@ class CrownUnlimited(commands.Cog):
                     custom_id="gold"
                 ),
                 manage_components.create_button(
+                    style=ButtonStyle.blue,
+                    label="Glory",
+                    custom_id="glory"
+                ),
+                manage_components.create_button(
                     style=ButtonStyle.red,
                     label="Ignore",
                     custom_id="ignore"
                 ),
             ]
-            if selected_card.tier > 4 and selected_card.card_lvl > 350:
-                random_battle_buttons.append(manage_components.create_button(
-                    style=ButtonStyle.blue,
-                    label="Glory",
-                    custom_id="glory"
-                ),)
             random_battle_buttons_action_row = manage_components.create_actionrow(*random_battle_buttons)
 
 

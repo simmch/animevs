@@ -298,8 +298,7 @@ class Card:
                         break
                 else:
                     self.card_lvl = 0
-            else:
-                self.card_lvl = 0
+
 
             self.card_lvl_ap_buff = crown_utilities.level_sync_stats(self.card_lvl, "AP")
             self.card_lvl_attack_buff = crown_utilities.level_sync_stats(self.card_lvl, "ATK_DEF")
@@ -588,9 +587,9 @@ class Card:
         if self.tier == 5:
             self.bounty = random.randint(50000, 60000)
         if self.tier == 6:
-            self.bounty = random.randint(100000, 150000)
+            self.bounty = random.randint(250000, 350000)
         if self.tier == 7:
-            self.bounty = random.randint(200000, 300000)
+            self.bounty = random.randint(400000, 900000)
 
         mode_selector_randomizer = random.randint(0, 200)
 
@@ -612,7 +611,7 @@ class Card:
             selected_mode = "Hard"
             self.approach_message = "🔥 An Empowered "
             self._explore_cardtitle = {'TITLE': 'Dungeon Title'}
-            self.card_lvl = random.randint(350, 600)
+            self.card_lvl = random.randint(400, 750)
             self.bounty = self.bounty * 30
 
 
@@ -1339,9 +1338,11 @@ class Card:
                         dmg = ap / 3
                     else:
                         dmg = ap / 2
-                
+                # base_damage = self.attack - _opponent_card.defense
+                # actual_damage = base_damage if base_damage > 0 else 1  # Ensure damage is at least 1
+                # dmg = actual_damage + ap
                 low = dmg - (dmg * .20)
-                high = dmg + (dmg * .05)
+                high = dmg + (dmg * .10)
                 true_dmg = (round(random.randint(int(low), int(high)))) + 25
 
                 message = ""            
